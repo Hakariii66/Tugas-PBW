@@ -6,10 +6,12 @@
     --after-color : radial-gradient(circle, rgba(1,43,107,0.08) 0%, transparent 70%);
 }
 
+/*
 @font-face {
     font-family: Highrise;
     src: url("/font/HighriseFont.woff2");
 }
+*/
 
 * {
     margin: 0;
