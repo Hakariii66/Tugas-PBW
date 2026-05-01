@@ -90,7 +90,7 @@ form.addEventListener('submit', (e) => {
                 localStorage.setItem('bps_user', username);
             }
             // Redirect ke halaman utama
-            window.location.href = '/index.html';
+            window.location.href = '../index.html';
         } else {
             if (username !== VALID_USER) {
                 errUser.textContent = 'Username tidak ditemukan.';
