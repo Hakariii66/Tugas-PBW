@@ -1,0 +1,190 @@
+:root {
+    --primary-color: #012B6B;
+    --secondary-color: #0092dc;
+    --text-light: #f5f8ff;
+    --before-color : radial-gradient(circle, rgba(0,146,220,0.10) 0%, transparent 70%);
+    --after-color : radial-gradient(circle, rgba(1,43,107,0.08) 0%, transparent 70%);
+}
+
+@font-face {
+    font-family: Highrise;
+    src: url("/font/HighriseFont.woff2");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: #eef2f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ─── HEADER ─────────────────────────────────────────────── */
+header {
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 64px;
+    box-shadow: 0 4px 20px rgba(1, 43, 107, 0.4);
+    position: relative;
+    z-index: 100;
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-text img {
+    width: 3rem;
+}
+
+.logo-text h1 {
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.25rem;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-family: 'Georgia', serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    padding: 0.45rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+/* ─── MAIN CONTAINER ──────────────────────────────────────── */
+.container {
+    flex: 1;
+    padding: 2rem 1.5rem;
+}
+
+.container h2 {
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1a1a2e;
+    margin-bottom: 1.5rem;
+}
+
+/* ─── FORM WRAPPER ────────────────────────────────────────── */
+.form-wrapper {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    padding: 1.5rem 2rem 2rem;
+}
+
+/* ─── PESAN ERROR ─────────────────────────────────────────── */
+#pesanError {
+    display: none;
+    background-color: #fde8e8;
+    border: 1px solid #e57373;
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.82rem;
+    color: #c0392b;
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+/* ─── FIELD GROUP ─────────────────────────────────────────── */
+.field-group {
+    margin-bottom: 1rem;
+}
+
+.field-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #1a1a2e;
+    margin-bottom: 0.4rem;
+}
+
+.field-group input {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-family: 'Georgia', serif;
+    font-size: 0.875rem;
+    color: #1a1a2e;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field-group input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(0, 146, 220, 0.15);
+}
+
+/* ─── SUBMIT BUTTON ───────────────────────────────────────── */
+button[type="submit"] {
+    margin-top: 0.5rem;
+    padding: 0.65rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #034f84;
+    color: #ffffff;
+    font-family: 'Georgia', serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #023561;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+footer {
+    background: var(--primary-color);
+    text-align: center;
+    padding: 0.55rem 1rem;
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+footer address {
+    font-style: italic;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    letter-spacing: 0.03em;
+}
