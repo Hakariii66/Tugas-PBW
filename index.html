@@ -3,51 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="icon" type="image/x-icon" href="./image/logo/logo-bps.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="./image/logo/logoUHD.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>BPS PAPUA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Badan Pusat Statistik Provinsi Papua</title>
 </head>
 <body>
-    <header>
-        <div class="logo-text">
-            <img src="./image/logo/logo-bps.png" alt="logo-bps">
-            <h1>Badan Pusat Statistik Papua</h1>
+    <!-- NAVBAR (fixed) -->
+    <nav>
+        <div class="logo-judul">
+            <img src="./image/logo/logoUHD.png" alt="Logo BPS Papua" class="logo">
+            <p class="judul">Badan Pusat Statistik <br> Provinsi Papua</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="./index.html" class="active"><i class="bi bi-house"></i> Home</a></li>
-                <li><a href="./html/daftar-publikasi.html"><i class="bi bi-card-list"></i> Daftar Publikasi</a></li>
-                <li><a href="./html/tambah-publikasi.html"><i class="bi bi-plus-circle"></i> Tambah Publikasi</a></li>
-                <li><a href="./html/galeri-publikasi.html"><i class="bi bi-people-fill"></i> Galeri Publikasi</a></li>
-                <li><a href="./html/login.html"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="hero-section">
-        <div class="left">
-            <div class="hero-text">
-                <h1>Selamat Datang</h1>
+        <ul>
+            <li><a href="./index.html" class="active"><i class="fa-solid fa-house"></i> Beranda</a></li>
+            <li><a href="./html/daftar-publikasi.html"><i class="fa-solid fa-book"></i> Daftar Publikasi</a></li>
+            <li><a href="./html/tambah-publikasi.html"><i class="fa-solid fa-plus"></i> Tambah Publikasi</a></li>
+            <li><a href="./html/galeri-publikasi.html"><i class="fa-solid fa-images"></i> Galeri Publikasi</a></li>
+            <li><a href="https://papua.bps.go.id/id"><i class="fa-solid fa-globe"></i> Web Aslinya</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero-section">
+            <div class="description">
+                <h2>Lembaga yang Independen, Tepercaya, dan Berperan Aktif dalam Mendukung Perumusan Kebijakan Berbasis Data Bersama Indonesia Maju Menuju Indonesia Emas 2045</h2>
             </div>
-            <div class="desc-text">
-                <p> BPS adalah Lembaga yang Independen, Tepercaya, dan Berperan Aktif dalam Mendukung Perumusan Kebijakan Berbasis Data 
-                    Bersama Indonesia Maju Menuju Indonesia Emas 2045
-                </p>
+
+            <div class="search-box">
+                <form>
+                    <input type="text" name="search" placeholder="Cari publikasi...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
             </div>
-        </div>
-        <div class="right">
-            <div class="img-cardflips">
-                <a href=""><img src="./image/hero-section/1.webp" alt="1"></a>
-                <a href=""><img src="./image/hero-section/2.webp" alt="2"></a>
-                <a href=""><img src="./image/hero-section/3.webp" alt="3"></a>
-                <a href=""><img src="./image/hero-section/4.webp" alt="4"></a>
-                <a href=""><img src="./image/hero-section/5.webp" alt="5"></a>
+
+            <!-- CARD SLIDER -->
+            <div class="slider-wrapper">
+                <button class="slider-btn" id="slider-prev" aria-label="Previous">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="slider-track-container">
+                    <div class="card-wrapper">
+                        <a href="https://papua.bps.go.id/id/statistics-table/2/NDYjMg==/garis-kemiskinan--2023.html" class="link">
+                            <div class="card" id="card1">
+                                <div class="icon"></div>
+                                <h3 class="title">Garis Kemiskinan</h3>
+                                <div class="count">686.469</div>
+                                <div class="date">Rupiah/Kapita/Bulan · 2023</div>
+                            </div>
+                        </a>
+                        <a href="https://papua.bps.go.id/id/pressrelease/2025/11/05/1261/indeks-pembangunan-manusia--ipm--provinsi-papua--tahun-2025.html" class="link">
+                            <div class="card" id="card2">
+                                <div class="icon"></div>
+                                <h3 class="title">Indeks Pembangunan Manusia</h3>
+                                <div class="count">74,69</div>
+                                <div class="date">2025</div>
+                            </div>
+                        </a>
+                        <a href="https://papua.bps.go.id/id/pressrelease/2026/04/01/1453/perkembangan-indeks-harga-konsumen-provinsi-papua--maret-2026.html" class="link">
+                            <div class="card" id="card3">
+                                <div class="icon"></div>
+                                <h3 class="title">Indeks Harga Konsumen</h3>
+                                <div class="count">108,78</div>
+                                <div class="date">Maret 2026</div>
+                            </div>
+                        </a>
+                        <a href="https://papua.bps.go.id/id/statistics-table/2/NTAjMg==/rasio-gini--2023.html" class="link">
+                            <div class="card" id="card4">
+                                <div class="icon"></div>
+                                <h3 class="title">Rasio Gini</h3>
+                                <div class="count">0,41</div>
+                                <div class="date">2023</div>
+                            </div>
+                        </a>
+                        <a href="https://papua.bps.go.id/id/statistics-table/2/NDUjMg==/persentase-penduduk-miskin--2023.html" class="link">
+                            <div class="card" id="card5">
+                                <div class="icon"></div>
+                                <h3 class="title">Persentase Penduduk Miskin</h3>
+                                <div class="count">26,03%</div>
+                                <div class="date">2023</div>
+                            </div>
+                        </a>
+                        <a href="https://papua.bps.go.id/id/statistics-table/2/MTI0IzI=/indeks-kemahalan-konstruksi--2019.html" class="link">
+                            <div class="card" id="card6">
+                                <div class="icon"></div>
+                                <h3 class="title">Indeks Kemahalan Konstruksi</h3>
+                                <div class="count">218,59</div>
+                                <div class="date">2019</div>
+                            </div>
+                        </a>
+                        <a href="https://papua.bps.go.id/id/statistics-table/2/NjgwIzI=/inflasi-umum-tahunan-di-provinsi-papua.html" class="link">
+                            <div class="card" id="card7">
+                                <div class="icon"></div>
+                                <h3 class="title">Inflasi Umum Tahunan Jayapura</h3>
+                                <div class="count">6,70</div>
+                                <div class="date">2018</div>
+                            </div>
+                        </a>
+                        <a href="https://papua.bps.go.id/id/statistics-table/2/NDc4IzI=/tingkat-pengangguran-terbuka-menurut-kabupaten-kota.html" class="link">
+                            <div class="card" id="card8">
+                                <div class="icon"></div>
+                                <h3 class="title">Tingkat Pengangguran Terbuka</h3>
+                                <div class="count">3,33%</div>
+                                <div class="date">2021</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="slider-btn" id="slider-next" aria-label="Next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
-        </div>
+
+            <!-- Slider dots indicator -->
+            <div class="slider-dots"></div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id="footer-section">
+            <div class="top-ft">
+                <!-- Kolom 1: Info & Banner -->
+                <div class="top-left">
+                    <div class="logo-judul">
+                        <img src="./image/logo/logoUHD.png" alt="Logo BPS Papua" class="logo">
+                        <p class="judul">Badan Pusat Statistik <br> Provinsi Papua</p>
+                    </div>
+                    <div class="address">
+                        <p>Badan Pusat Statistik Provinsi Papua<br>
+                        (BPS-Statistics of Papua Province)<br>
+                        Jl. Dr. Sam Ratulangi Dok II Jayapura 99112<br>
+                        Telp. (0967) 5165 999; 5165 107<br>
+                        Hp : 0821 24 535 535 &nbsp; Email : pst9400@bps.go.id</p>
+                    </div>
+                    <div class="banner">
+                        <img src="./image/logo/banner-BerAhlak.png" alt="Banner BerAhlak">
+                    </div>
+                </div>
+
+                <!-- Kolom 2: Tentang Kami -->
+                <div class="col-tentang">
+                    <h4>Tentang Kami</h4>
+                    <ul>
+                        <li><a href="#">Profil BPS</a></li>
+                        <li><a href="#">PPID</a></li>
+                        <li><a href="#">Kebijakan Diseminasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Tautan Lainnya -->
+                <div class="col-tautan">
+                    <h4>Tautan Lainnya</h4>
+                    <ul>
+                        <li><a href="#">ASEAN Stats</a></li>
+                        <li><a href="#">Reformasi Birokrasi</a></li>
+                        <li><a href="#">Layanan Pengadaan Secara Elektronik</a></li>
+                        <li><a href="#">Politeknik Statistika STIS</a></li>
+                        <li><a href="#">Pusdiklat BPS</a></li>
+                        <li><a href="#">JDIH BPS</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Bottom bar -->
+            <div class="bottom-ft">
+                <address>Created by Athaya Daffa Winata (222413514@stis.ac.id)</address>
+
+                <div class="social-media">
+                    <div id="facebook">
+                        <a href="https://www.facebook.com/bpspapua94/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <div id="instagram">
+                        <a href="https://www.instagram.com/bpspapua/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <div id="twitter">
+                        <a href="https://x.com/bps_statistics" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                    <div id="youtube">
+                        <a href="https://www.youtube.com/channel/UCHt_0w9GM-y5sNzSWtjGtkA" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
-    <footer>
-        <address>Created by Athaya Daffa Winata (222413514@stis.ac.id)</address>
-    </footer>
+
     <script src="./js/index.js"></script>
 </body>
 </html>

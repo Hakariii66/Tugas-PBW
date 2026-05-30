@@ -2,16 +2,9 @@
     --primary-color: #012B6B;
     --secondary-color: #0092dc;
     --text-light: #f5f8ff;
-    --before-color : radial-gradient(circle, rgba(0,146,220,0.10) 0%, transparent 70%);
-    --after-color : radial-gradient(circle, rgba(1,43,107,0.08) 0%, transparent 70%);
+    --text-black: black;
+    --main-font: Arial, sans-serif;
 }
-
-/*
-@font-face {
-    font-family: Highrise;
-    src: url("/font/HighriseFont.woff2");
-}
-*/
 
 * {
     margin: 0;
@@ -19,83 +12,100 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: Arial, sans-serif;
     background-color: #eef2f8;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     overflow-x: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;  /* navbar | main tumbuh | footer */
+    grid-template-areas:
+        "navbar"
+        "main"
+        "footer";
 }
 
-/* ─── HEADER ─────────────────────────────────────────────── */
-header {
-    background: var(--primary-color);
+/* ===================== NAVBAR ===================== */
+nav {
+    grid-area: navbar;          /* ← tempatkan di area navbar */
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 2.5rem;
-    height: 64px;
-    box-shadow: 0 4px 20px rgba(1, 43, 107, 0.4);
-    position: relative;
-    z-index: 100;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+    /* FIXED NAVBAR */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-.logo-text {
+nav .logo-judul {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 12px;
 }
 
-.logo-text img {
-    width: 3rem;
+.logo {
+    width: 70px;
+    height: 50px;
+    object-fit: contain;
 }
 
-.logo-text h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, serif;
-    font-size: 1.3rem;
-    font-style: italic;
-    color: var(--text-light);
-    letter-spacing: 0.08em;
+nav .logo-judul .judul {
+    font-size: 0.95rem;
     text-transform: uppercase;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--text-light);
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 0.25rem;
+    align-items: center;
+    gap: 5px;
+    list-style: none;
 }
 
 nav ul li a {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: rgba(255,255,255,0.85);
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.82rem;
-    font-weight: bolder;
-    letter-spacing: 0.04em;
-    padding: 0.45rem 1rem;
-    border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.active {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
 }
 
 /* ─── MAIN CONTAINER ──────────────────────────────────────── */
 .container {
-    flex: 1;
+    grid-area: main;        /* ← tempatkan di area main */
+    margin-top: 70px;       /* offset navbar fixed */
     padding: 2rem 1.5rem;
 }
 
 .container h2 {
     text-align: center;
-    font-family: 'Georgia', serif;
+    font-family: var(--main-font);
     font-size: 1.3rem;
     font-weight: bold;
     color: #1a1a2e;
@@ -162,31 +172,151 @@ button[type="submit"] {
     padding: 0.65rem 1.5rem;
     border: none;
     border-radius: 4px;
-    background-color: #034f84;
+    background-color: var(--primary-color);
     color: #ffffff;
-    font-family: 'Georgia', serif;
+    font-family: var(--main-font);
     font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
-button[type="submit"]:hover {
+/*button[type="submit"]:hover {
     background-color: #023561;
-}
+}*/
 
-/* ─── FOOTER ──────────────────────────────────────────────── */
-footer {
-    background: var(--primary-color);
-    text-align: center;
-    padding: 0.55rem 1rem;
-    flex-shrink: 0;
-    margin-top: auto;
-}
-
-footer address {
-    font-style: italic;
-    font-size: 0.75rem;
+/* ===================== FOOTER ===================== */
+footer#footer-section {
+    grid-area: footer;          /* ← tempatkan di area footer */
+    background-color: var(--primary-color);
     color: var(--text-light);
-    letter-spacing: 0.03em;
+    padding: 40px 60px 0;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
+footer#footer-section .top-ft {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;   /* 3 kolom: info lebar | tentang | tautan */
+    gap: 40px;
+    align-items: start;
+    padding-bottom: 30px;
+}
+
+/* LEFT column: logo + address + banner */
+footer .top-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+footer .top-left .logo-judul {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+footer .top-left .logo-judul .judul {
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+footer .top-left .address p {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: rgba(245, 248, 255, 0.85);
+}
+
+footer .top-left .banner img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    background-color: white;
+}
+
+
+footer .col-tentang h4,
+footer .col-tautan h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-light);
+}
+
+footer .col-tentang ul,
+footer .col-tautan ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer .col-tentang ul li a,
+footer .col-tautan ul li a {
+    text-decoration: none;
+    color: rgba(245, 248, 255, 0.8);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+footer .col-tentang ul li a:hover,
+footer .col-tautan ul li a:hover {
+    color: var(--secondary-color);
+}
+
+
+
+/* HR */
+footer hr {
+    border: none;
+    border-top: 1px solid rgba(245, 248, 255, 0.2);
+    margin: 0;
+}
+
+/* Bottom bar */
+footer .bottom-ft {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+footer .bottom-ft address {
+    font-style: normal;
+    font-size: 0.85rem;
+    color: rgba(245, 248, 255, 0.75);
+}
+
+/* Social media icons — circular colored buttons */
+footer .social-media {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+footer .social-media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+footer .social-media a:hover {
+    opacity: 0.85;
+    transform: scale(1.1);
+}
+
+footer .social-media #instagram a { background-color: #E1306C; }
+footer .social-media #twitter a   { background-color: #111111; }
+footer .social-media #facebook a  { background-color: #1877F2; }
+footer .social-media #youtube a   { background-color: #FF0000; }
